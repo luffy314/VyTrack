@@ -1,38 +1,50 @@
 package com.cydeo.step_definitions;
 
 import com.cydeo.pages.VytrackPage;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class US_B26G8_66_StepDef {
-
+public class US_B26G8_54_stepDef {
 
     VytrackPage vytrackPage = new VytrackPage();
-
+    Actions actions = new Actions(Driver.getDriver());
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
     @Given("user on the Dashboard page")
     public void user_on_the_dashboard_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("vytrack.url"));
-        vytrackPage.login("user22", "UserUser123");
+        vytrackPage.login(ConfigurationReader.getProperty("username"), ConfigurationReader.getProperty("password"));
     }
-
-    @When("user clicks on Vehicle under fleet module")
-    public void user_clicks_on_vehicle_under_fleet_module()  {
+    @When("user click on Vehicle under fleet module")
+    public void user_click_on_vehicle_under_fleet_module() {
         vytrackPage.fleetModule.click();
         vytrackPage.vehicles.click();
-
     }
 
+    // Anton's scenario
+    @Then("user should be able to click on the Export Grid button")
+    public void user_should_be_able_to_click_on_the_export_grid_button() {
+
+        vytrackPage.exportGrid.click();
+        WebElement csv = Driver.getDriver().findElement(By.xpath("//a[@title='CSV']"));
+        Assert.assertTrue(csv.isDisplayed());
+        Driver.closeDriver();
+    }
+
+    // Shinkay's scenario
     @Then("user should see Export Grid button on the left")
     public void user_should_see_export_grid_button_on_the_left() {
-
         // using explicit wait for the driver to have enough time to locate vehicles under fleet module
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 3);
         wait.until(ExpectedConditions.visibilityOf(vytrackPage.exportGrid));
@@ -55,4 +67,5 @@ public class US_B26G8_66_StepDef {
 
 
     }
+
 }
