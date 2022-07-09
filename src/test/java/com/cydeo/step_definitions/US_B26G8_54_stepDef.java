@@ -61,11 +61,22 @@ public class US_B26G8_54_stepDef {
         action.moveToElement(vytrackPage.exportGrid, xcord, ycord).click().build().perform();
 
         // making an if condition to verify the presence of the button on the left side
-        if(xcord >= 0 && ycord >= 0){
+        if (xcord >= 0 && ycord >= 0) {
             System.out.println("Export Grid button is on the left side of the page");
         }
+    }
+        //Sasha's scenario
 
-
+    @Then("User should see Grid Settings button and click it")
+    public void userShouldSeeGridSettingsButtonAndClickIt() {
+            wait.until(ExpectedConditions.elementToBeClickable(vytrackPage.settingsButton));
+            vytrackPage.settingsButton.click();
     }
 
-}
+    @Then("User should see Grid Settings dropdown menu")
+    public void userShouldSeeGridSettingsDropdownMenu() {
+        wait.until(ExpectedConditions.visibilityOf(vytrackPage.gridSettingsTableTitle));
+        vytrackPage.gridSettingsTableTitle.isDisplayed();
+    }
+    }
+

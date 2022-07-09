@@ -15,3 +15,11 @@
       When user click on Vehicle under fleet module
       Then user should see Export Grid button on the left
 
+    @B26G8-54 @B26G8_61 @Sasha
+    Scenario: User click Grid Button
+      Given user on the Dashboard page
+      When user click on Vehicle under fleet module
+      Then User should see Grid Settings button and click it
+      Then User should see Grid Settings dropdown menu
+
+

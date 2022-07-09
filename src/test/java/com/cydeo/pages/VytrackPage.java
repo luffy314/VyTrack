@@ -34,4 +34,9 @@ public class VytrackPage {
         inputPassword.sendKeys(password);
         loginBtn.click();
     }
+
+    @FindBy (xpath = "//i[@class='fa-cog hide-text']//..//..")
+    public WebElement settingsButton;
+    @FindBy (xpath = "//div//div[.='Grid Settings']")
+    public WebElement gridSettingsTableTitle;
 }
