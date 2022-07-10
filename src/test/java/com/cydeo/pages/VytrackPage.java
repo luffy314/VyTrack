@@ -42,4 +42,11 @@ public class VytrackPage {
     public WebElement settingsButton;
     @FindBy (xpath = "//div//div[.='Grid Settings']")
     public WebElement gridSettingsTableTitle;
+
+    @FindBy(xpath = "//i[@class='fa-repeat']")
+    public WebElement RefreshBtn;
+
+    @FindBy(xpath = "//a[@class='action btn reset-action mode-text-only']")
+    public WebElement RessetBtn;
 }
+

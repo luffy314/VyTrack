@@ -105,7 +105,11 @@ public class US_B26G8_54_stepDef {
 
     }
 
-
+    @Then("Then user should see Refresh button on the left side of Reset button")
+    public void then_user_should_see_refresh_button_on_the_left_side_of_reset_button() {
+        BrowserUtils.waitForVisibility(vytrackPage.RefreshBtn,5);
+        Assert.assertTrue(vytrackPage.RefreshBtn.isDisplayed());
+    }
 
 
 
