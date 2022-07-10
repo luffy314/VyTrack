@@ -29,6 +29,9 @@ public class VytrackPage {
     @FindBy(xpath = "//div[@class='pull-left grid-toolbar-mass-actions']")
     public WebElement exportGrid;
 
+    @FindBy(xpath = "//div[@class='column-manager dropdown']")
+    public WebElement GridSettingButton;
+
     public void login(String username, String password){
         inputUsername.sendKeys(username);
         inputPassword.sendKeys(password);

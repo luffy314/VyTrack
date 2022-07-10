@@ -15,3 +15,9 @@
       When user click on Vehicle under fleet module
       Then user should see Export Grid button on the left
 
+    @B26G8-67   @B26G8-54 @Kanan
+    Scenario: Grid Settings should be on the right side of the Reset button
+
+      Given user on the Dashboard page
+      When user clik on Vehicle under fleet module
+      Then user should see Grid Settings on the right side of Reset button

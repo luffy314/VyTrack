@@ -65,7 +65,35 @@ public class US_B26G8_54_stepDef {
             System.out.println("Export Grid button is on the left side of the page");
         }
 
+    }
+
+
+    // Kanan's scenario
+    @When("user clik on Vehicle under fleet module")
+    public void user_clik_on_vehicle_under_fleet_module() {
+
+        vytrackPage.fleetModule.click();
+
+        BrowserUtils.waitForVisibility(vytrackPage.vehicles, 5);
+
+        vytrackPage.vehicles.click();
+
+        BrowserUtils.waitForVisibility(vytrackPage.GridSettingButton, 5);
 
     }
+
+    @Then("user should see Grid Settings on the right side of Reset button")
+    public void user_should_see_grid_settings_on_the_right_side_of_reset_button() {
+
+
+        Assert.assertTrue(vytrackPage.GridSettingButton.isDisplayed());
+
+
+
+    }
+
+
+
+
 
 }
