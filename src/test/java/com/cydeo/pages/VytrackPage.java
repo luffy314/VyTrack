@@ -26,6 +26,9 @@ public class VytrackPage {
     @FindBy(xpath = "//span[.='Vehicles']")
     public WebElement vehicles;
 
+    @FindBy(xpath = "//div[@class='column-manager dropdown']")
+    public WebElement GridSettingButton;
+
     @FindBy(xpath = "//div[@class='pull-left grid-toolbar-mass-actions']")
     public WebElement exportGrid;
 
