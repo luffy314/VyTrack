@@ -9,11 +9,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
 
 public class US_B26G8_54_stepDef {
 
@@ -105,9 +108,20 @@ public class US_B26G8_54_stepDef {
 
     }
 
+    //Ali
+    @Then("user should be able to click on the refresh button")
+    public void userShouldBeAbleToClickOnTheRefreshButton() {
 
+        boolean clicked = false;
+        wait.until(ExpectedConditions.elementToBeClickable(vytrackPage.refreshButton));
+        try {
+            vytrackPage.refreshButton.click();
+            clicked = true;
+        } catch (Exception e) {
+            throw new NoSuchElementException("element not clicked");
+        }
+        Assert.assertTrue(clicked);
 
-
-
+    }
 }
 

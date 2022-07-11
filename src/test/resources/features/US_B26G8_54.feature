@@ -30,3 +30,11 @@
       When user clik on Vehicle under fleet module
       Then user should see Grid Settings on the right side of Reset button
 
+
+
+
+        @B26G8-56  @B26G8-70  @ali
+      Scenario: User should be able to click refresh button
+        Given user on the Dashboard page
+        When user click on Vehicle under fleet module
+        Then user should be able to click on the refresh button

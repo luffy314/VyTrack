@@ -42,4 +42,12 @@ public class VytrackPage {
     public WebElement settingsButton;
     @FindBy (xpath = "//div//div[.='Grid Settings']")
     public WebElement gridSettingsTableTitle;
+
+
+    @FindBy(css = ".refresh-action")
+    public WebElement refreshButton;
+
+
+
+
 }
