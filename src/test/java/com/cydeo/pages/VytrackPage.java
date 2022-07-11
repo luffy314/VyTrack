@@ -47,8 +47,8 @@ public class VytrackPage {
     @FindBy(xpath = "//i[@class='fa-repeat']")
     public WebElement RefreshBtn;
 
-    @FindBy(xpath = "//a[@class='action btn reset-action mode-text-only']")
-    public WebElement RessetBtn;
+    @FindBy(xpath = "//a[@title='Reset']")
+    public WebElement resetBtn;
 
 
     @FindBy(css = ".refresh-action")
