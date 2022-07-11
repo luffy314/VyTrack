@@ -29,6 +29,7 @@ public class US_B26G8_54_stepDef {
         Driver.getDriver().get(ConfigurationReader.getProperty("vytrack.url"));
         vytrackPage.login(ConfigurationReader.getProperty("username"), ConfigurationReader.getProperty("password"));
     }
+
     @When("user click on Vehicle under fleet module")
     public void user_click_on_vehicle_under_fleet_module() {
         vytrackPage.fleetModule.click();
@@ -68,12 +69,12 @@ public class US_B26G8_54_stepDef {
             System.out.println("Export Grid button is on the left side of the page");
         }
     }
-        //Sasha's scenario
+    //Sasha's scenario
 
     @Then("User should see Grid Settings button and click it")
     public void userShouldSeeGridSettingsButtonAndClickIt() {
-            wait.until(ExpectedConditions.elementToBeClickable(vytrackPage.settingsButton));
-            vytrackPage.settingsButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(vytrackPage.settingsButton));
+        vytrackPage.settingsButton.click();
     }
 
     @Then("User should see Grid Settings dropdown menu")
@@ -94,7 +95,6 @@ public class US_B26G8_54_stepDef {
         vytrackPage.vehicles.click();
 
 
-
     }
 
     @Then("user should see Grid Settings on the right side of Reset button")
@@ -105,8 +105,15 @@ public class US_B26G8_54_stepDef {
         Assert.assertTrue(vytrackPage.GridSettingButton.isDisplayed());
 
 
-
     }
+
+
+    @Then("Then user should see Refresh button on the left side of Reset button")
+    public void then_user_should_see_refresh_button_on_the_left_side_of_reset_button() {
+        BrowserUtils.waitForVisibility(vytrackPage.RefreshBtn, 5);
+        Assert.assertTrue(vytrackPage.RefreshBtn.isDisplayed());
+    }
+
 
     //Ali
     @Then("user should be able to click on the refresh button")
@@ -123,5 +130,6 @@ public class US_B26G8_54_stepDef {
         Assert.assertTrue(clicked);
 
     }
-}
+    }
+
 

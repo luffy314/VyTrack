@@ -32,6 +32,15 @@
 
 
 
+    @B26G8-62 @B26G8-54 @Vicky
+    Scenario: Refresh button should be on the left side of Reset button
+
+      Given user on the Dashboard page
+      When user clik on Vehicle under fleet module
+      Then Then user should see Refresh button on the left side of Reset button
+
+
+
 
         @B26G8-56  @B26G8-70  @ali
       Scenario: User should be able to click refresh button
