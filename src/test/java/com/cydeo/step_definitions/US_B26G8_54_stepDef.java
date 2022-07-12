@@ -125,6 +125,7 @@ public class US_B26G8_54_stepDef {
         System.out.println("Position of the webelement from left side is " + xxcord1 + " pixels");
         int yycord1 = point.getY();
         System.out.println("Position of the webelement from top side is " + yycord1 + " pixels");
+        //seyma
 
         if (xxcord > xxcord1) {
             System.out.println("The grid settings bottom is on the right side of the page");
