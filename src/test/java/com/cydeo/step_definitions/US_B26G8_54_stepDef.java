@@ -164,7 +164,7 @@ public class US_B26G8_54_stepDef {
         if (scenario != null) {
             scenario.attach(screenshot, "image/png", scenario.getName());
         }
-
+        // Trying to Join...Mateen
         // or we can do it in one line
         //  byte [] screenshot = ((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
     }
