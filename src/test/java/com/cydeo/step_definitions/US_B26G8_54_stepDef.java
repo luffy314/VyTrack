@@ -67,7 +67,6 @@ public class US_B26G8_54_stepDef {
             System.out.println("Export Grid button is on the left side of the page");
         }
     }
-
     //Sasha's scenario
     @Then("User should see Grid Settings button and click it")
     public void userShouldSeeGridSettingsButtonAndClickIt() {
@@ -82,19 +81,50 @@ public class US_B26G8_54_stepDef {
     }
 
     // Kanan's scenario
+    @When("user clik on Vehicle under fleet module")
+    public void user_clik_on_vehicle_under_fleet_module() {
+
+        vytrackPage.fleetModule.click();
+
+        BrowserUtils.waitForVisibility(vytrackPage.vehicles, 5);
+
+        vytrackPage.vehicles.click();
+
+
+    }
     @Then("user should see Grid Settings on the right side of Reset button")
     public void user_should_see_grid_settings_on_the_right_side_of_reset_button() {
 
         BrowserUtils.waitForVisibility(vytrackPage.GridSettingButton, 5);
         Assert.assertTrue(vytrackPage.GridSettingButton.isDisplayed());
-    }
 
-   // Vicky
+    }
     @Then("Then user should see Refresh button on the left side of Reset button")
     public void then_user_should_see_refresh_button_on_the_left_side_of_reset_button() {
         BrowserUtils.waitForVisibility(vytrackPage.RefreshBtn, 5);
         Assert.assertTrue(vytrackPage.RefreshBtn.isDisplayed());
     }
+    //Seyma
+
+    @Then("user should see Grid Setting button on the right of the page")
+    public void user_should_see_grid_setting_button_on_the_right_of_the_page() {
+        Point point = vytrackPage.gridBtn.getLocation();
+        int xxcord = point.getX();
+        System.out.println("Position of the webelement from left side is " + xxcord + " pixels");
+        int yycord = point.getY();
+        System.out.println("Position of the webelement from top side is " + yycord + " pixels");
+
+
+        Point point1 = vytrackPage.RefreshBtn.getLocation();
+        int xxcord1 = point1.getX();
+        System.out.println("Position of the webelement from left side is " + xxcord1 + " pixels");
+        int yycord1 = point1.getY();
+        System.out.println("Position of the webelement from top side is " + yycord1 + " pixels");
+        //seyma
+
+        if (xxcord > xxcord1) {
+            System.out.println("The grid settings bottom is on the right side of the page");
+    }}
 
     //Ali
     @Then("user should be able to click on the refresh button")
@@ -139,6 +169,6 @@ public class US_B26G8_54_stepDef {
         //  byte [] screenshot = ((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
-}
+        }
 
 

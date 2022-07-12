@@ -40,9 +40,12 @@ public class VytrackPage {
 
     @FindBy (xpath = "//i[@class='fa-cog hide-text']//..//..")
     public WebElement settingsButton;
+
     @FindBy (xpath = "//div//div[.='Grid Settings']")
     public WebElement gridSettingsTableTitle;
 
+    @FindBy (xpath = "//i[@class='fa-cog hide-text']")
+    public WebElement gridBtn;
 
     @FindBy(xpath = "//i[@class='fa-repeat']")
     public WebElement RefreshBtn;
