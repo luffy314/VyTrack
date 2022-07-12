@@ -31,15 +31,26 @@
 
     @B26G8-67   @B26G8-54 @Kanan
     Scenario: Grid Settings should be on the right side of the Reset button
-
       Given user on the Dashboard page
-      When user clik on Vehicle under fleet module
+      When user click on Vehicle under fleet module
       Then user should see Grid Settings on the right side of Reset button
 
     @B26G8-62 @B26G8-54 @Vicky
     Scenario: Refresh button should be on the left side of Reset button
-
       Given user on the Dashboard page
-      When user clik on Vehicle under fleet module
+      When user click on Vehicle under fleet module
       Then Then user should see Refresh button on the left side of Reset button
 
+        @B26G8-56  @B26G8-70  @ali
+      Scenario: User should be able to click refresh button
+        Given user on the Dashboard page
+        When user click on Vehicle under fleet module
+        Then user should be able to click on the refresh button
+
+    @B26G8-57  @B26G8-63  @Gokhan
+    Scenario: User should be able click reset button
+        Given user on the Dashboard page
+        When user click on Vehicle under fleet module
+        And user checks the reset button if clickable
+        And user clicks on the reset button
+        Then the grid settings should be resetted to default
